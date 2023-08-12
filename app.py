@@ -36,39 +36,36 @@ age = st.sidebar.slider('age', 0, 100)
 fare = st.sidebar.slider('fare', 0, 300)
 
 # Sidebar Decoding
-match gender:
-    case 'male':
-        sex_male, sex_female = 1, 0
-    case 'female':
-        sex_male, sex_female = 0, 1
-    case _:
-        sex_male, sex_female = 0, 0
 
-match got_on:
-    case 'cherbourg':
-        embarked_c, embarked_q, embarked_s = 1, 0, 0
-    case 'queenstown':
-        embarked_c, embarked_q, embarked_s = 0, 1, 0
-    case 'southampton':
-        embarked_c, embarked_q, embarked_s = 0, 0, 1
-    case _:
-        embarked_c, embarked_q, embarked_s = 0, 0, 0
+if gender == 'male':
+    sex_male, sex_female = 1, 0
+elif gender == 'female':
+    sex_male, sex_female = 0, 1
+else:
+    sex_male, sex_female = 0, 0
 
-match pclass:
-    case 'first':
-        passclass = 1
-    case 'second':
-        passclass = 2
-    case 'third':
-        passclass = 3
-    case _:
-        passclass = 0
+if got_on == 'cherbourg':
+    embarked_c, embarked_q, embarked_s = 1, 0, 0
+elif got_on == 'queenstown':
+    embarked_c, embarked_q, embarked_s = 0, 1, 0
+elif got_on == 'southampton':
+    embarked_c, embarked_q, embarked_s = 0, 0, 1
+else:
+    embarked_c, embarked_q, embarked_s = 0, 0, 0
 
-match married:
-    case 'yes':
-        spouse = 1
-    case _:
-        spouse = 0
+if pclass == 'first':
+    passclass = 1
+elif pclass == 'second':
+    passclass = 2
+elif pclass == 'third':
+    passclass = 3
+else:
+    passclass = 0
+
+if married == 'yes':
+    spouse = 1
+else:
+    spouse = 0
 
 sibsp = spouse+siblings
 parch = parent_on_board+children
