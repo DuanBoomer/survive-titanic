@@ -33,7 +33,7 @@ parent_on_board = st.sidebar.number_input('parents on board', 0, 2)
 
 pclass = st.sidebar.radio('class', ['first', 'second', 'third'])
 age = st.sidebar.slider('age', 0, 100)
-fare = st.sidebar.slider('fare', 0, 300)\
+fare = st.sidebar.slider('fare', 0, 300)
 
 # Sidebar Decoding
 match gender:
